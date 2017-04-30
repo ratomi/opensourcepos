@@ -5,6 +5,7 @@ application/sessions/*
 application/logs/*
 application/uploads/*
 public/license/.licenses
+public/dist
 public/bower_components
 *.patch
 patches/
@@ -15,6 +16,7 @@ git-svn-diff.py
 .buildpath
 .project
 .settings/*
+vendor/
 *.swp
 *.rej
 *.orig
