@@ -226,18 +226,31 @@ module.exports = function(grunt) {
 					destination: 'docs'
 				}
 			}
-		}
+		},
+        compress: {
+            main: {
+                options: {
+                    mode: 'zip',
+                    archive: 'dist/opensourcepos.zip'
+                },
+                files: [
+                    {src: ['*']}
+                ]
+            }
+        }
     });
 
     require('load-grunt-tasks')(grunt);
     grunt.loadNpmTasks('grunt-mocha-webdriver');
 	grunt.loadNpmTasks('grunt-composer');
 	grunt.loadNpmTasks('grunt-apigen');
-
+    grunt.loadNpmTasks('grunt-contrib-compress');
+    
     grunt.registerTask('default', ['wiredep', 'bower_concat', 'bowercopy', 'concat', 'uglify', 'cssmin', 'tags', 'cachebreaker']);
     grunt.registerTask('update', ['composer:update', 'bower:update']);
     grunt.registerTask('gendocs', ['apigen:generate']);
     grunt.registerTask('genlicense', ['clean:license', 'license', 'bower-licensechecker']);
+    grunt.registerTask('package', ['default', 'compress']);
     grunt.registerTask('packages', ['composer:update']);
     grunt.registerTask('gendocs', ['apigen:generate']);
 
