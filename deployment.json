@@ -2,8 +2,8 @@
 
     "package": {
         "name": "opensourcepos",
-        "repo": "maven",
-        "subject": "opensourcepos",
+        "repo": "opensourcepos",
+        "subject": "jekkos",
         "website_url": "www..com",
         "issue_tracker_url": "https://github.com/jekkos/opensourcepo/issues",
         "vcs_url": "https://github.com/jekkos/opensourcepos.git",
